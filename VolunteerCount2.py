@@ -39,7 +39,13 @@ if answer == "1":
     subjects = int(input("How many subjects do you need to test? "))
     volunteers = int(input("How many volunteers do you have available? "))
     resultTimeCalc = TimeCalc(subjects, volunteers)
-    print("You need " + str(int(resultTimeCalc)) + " minutes for testing" )
+   if resultTimeCalc <= 60: 
+      print("You need " + str(int(resultTimeCalc)) + " minutes for testing" )
+   else:
+      hours_need = int(resultTimeCalc / 60)
+      extra_minutes = int(resultTimeCalc % 60)
+      print("You need " + str(hours_need) + " hours and " + 
+      str(extra_minutes) + " minutes")
     
 elif answer == "2":
     print("Section 2: Number of Volunteers Needed")
